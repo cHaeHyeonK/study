@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dash-board {
+            width: 100%;
+            height: 100%;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+                "header header header"
+                "aside main main"
+                "aside main main";
+        }
+
+        .dash-board>* {
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            grid-area: header;
+            position: relative;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+
+            position: absolute;
+            left: 10px;
+            top: 20px;
+
+            border-radius: 100%;
+            background-color: skyblue;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        .menu {
+            list-style-type: none;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .menu:hover {
+            transition-property: background-color;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+
+            background-color: lightcyan;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        .content {
+
+            width : 90%;
+            height : 90%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+                "IM IM IS"
+                "IM IM IS"
+                "C1 C2 C3";
+        }
+
+        .content > * {
+            border : 1px solid black;
+        }
+
+        .main {
+            grid-area: IM;
+        }
+
+        .side {
+            grid-area: IS;
+        }
+
+        .item:nth-child(3) {
+            grid-area: C1;
+        }
+
+        .item:nth-child(4) {
+            grid-area: C2;
+        }
+
+        .item:nth-child(5) {
+            grid-area: C3;
+        }
+
+        .counsel {
+            position : absolute;
+            right : 5px;
+            bottom : 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="dash-board">
+            <header>
+                <div class="logo"></div>
+            </header>
+            <aside>
+                <ul class="menu">
+                    <li>menu 1</li>
+                    <li>menu 2</li>
+                    <li>menu 3</li>
+                    <li>menu 4</li>
+                </ul>
+            </aside>
+            <main>
+                <div class="content">
+                    <div class="item main">Main Story</div>
+                    <div class="item side">Side Story</div>
+                    <div class="item">News 1</div>
+                    <div class="item">News 2</div>
+                    <div class="item">News 3</div>
+                </div>
+
+                <button class = "counsel">상담하기</button>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
