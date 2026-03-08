@@ -103,4 +103,14 @@ public class IntQueue {
 			System.out.println();
 		}
 	}
+	
+	public int search(int x) {
+		for(int i = 0; i < num; i++) {
+			int idx = (i + front) % capacity;
+			if(que[idx] == x)
+				return (i + front + 1);
+		}
+		
+		return 0;
+	}
 }

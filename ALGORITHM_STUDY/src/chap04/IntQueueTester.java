@@ -10,7 +10,7 @@ public class IntQueueTester {
 		while (true) {
 			System.out.println();
 			System.out.printf("현재 데이터 개수 : %d / %d\n", s.size(), s.getCapacity());
-			System.out.print("(1) 인큐 (2) 디큐 (3) 피크 (4) 덤프 (0) 종료 : ");
+			System.out.print("(1) 인큐 (2) 디큐 (3) 피크 (4) 덤프 (5) 서치 (0) 종료 : ");
 
 			int menu = stdIn.nextInt();
 			if (menu == 0)
@@ -50,6 +50,16 @@ public class IntQueueTester {
 			case 4:
 				s.dump();
 				break;
+				
+			case 5:
+				System.out.print("데이터 : ");
+				x = stdIn.nextInt();
+				int idx = s.search(x);
+				
+				if(x == 0)
+					System.out.println("찾는 데이터가 없습니다.");
+				else
+					System.out.println("찾는 데이터는 논리적으로 " + idx + "에 존재합니다.");
 			}
 		}
 		
