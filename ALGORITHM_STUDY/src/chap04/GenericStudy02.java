@@ -32,6 +32,7 @@ public class GenericStudy02<K, V> {
 		return o;
 	}
 	
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		GenericStudy02<String, Integer> a = new GenericStudy02<String, Integer>();
 		a.set("10", 10);
