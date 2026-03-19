@@ -28,6 +28,6 @@ public class RecurX2 {
 	}
 	
 	public static void main(String[] args) {
-		recur(4);
+		recur(3);
 	}
 }
