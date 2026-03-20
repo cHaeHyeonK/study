@@ -19,19 +19,22 @@ public class BubbleSort {
 //	패스의 과정에서는 얼마나 정렬되어 있냐(i)에 따라서 달라짐.
 	static void bubbleSort(int[] a, int n) {
 		
-		for(int i = 0; i < n - 1; i++) {
+		int i, compari = 0;
+		
+		for(i = 0; i < n - 1; i++) {
 			System.out.println("\n패스 " + (i + 1) + "\n");
 			
 			for(int j = n - 1; j > i; j--) {
 				
 				boolean isSwap = false;
+				compari++;
 				
 				if(a[j - 1] > a[j]) {
 					isSwap = true;
 				}
 				
 				for(int k = 0; k < n; k++) {
-					System.out.print("" + a[k]);
+					System.out.print(a[k]);
 					
 					if(a[j] == a[k] && !isSwap)
 						System.out.print(" - ");
@@ -45,6 +48,9 @@ public class BubbleSort {
 				System.out.println();
 			}
 		}
+		
+		System.out.println("비교를 " + compari + "회 했습니다.");
+		System.out.println("교환을 " + i +"회 했습니다.\n");
 
 	}
 	
@@ -71,7 +77,7 @@ public class BubbleSort {
 		
 		bubbleSort(x, nx);
 		
-		System.out.println("오름차순으로 정렬했습니다.");
+//		System.out.println("오름차순으로 정렬했습니다.");
 		for(int i = 0; i < nx; i++)
 			System.out.println("x[" + i + "] : " + x[i]);
 		
