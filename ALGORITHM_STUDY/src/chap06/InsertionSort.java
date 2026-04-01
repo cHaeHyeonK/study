@@ -8,6 +8,11 @@ public class InsertionSort {
 			int j;
 			int tmp = a[i];
 			
+			for(int k = 0; k < n; k++) {
+				System.out.print("  " + a[k]);
+			}
+			System.out.println();
+			
 			for(j = i; j > 0 && a[j-1] > tmp; j--)
 				a[j] = a[j-1];
 			a[j] = tmp;
@@ -34,5 +39,7 @@ public class InsertionSort {
 		for(int i = 0; i < nx; i++) {
 			System.out.println("x[" + i + "] : " + x[i]);
 		}
+		
+		stdIn.close();	
 	}
 }
